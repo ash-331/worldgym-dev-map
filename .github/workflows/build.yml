@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - '2025-*/**.gpx'
+      - '2025-*/shops.json'
       - 'scripts/**.py'
 
 jobs:
@@ -25,7 +26,7 @@ jobs:
         run: python scripts/generate_map.py
 
       - name: Generate homepage
-        run: python generate_home.py
+        run: python scripts/generate_home.py
 
       - name: Commit and Push
         run: |
