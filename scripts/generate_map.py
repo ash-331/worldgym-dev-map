@@ -4,13 +4,13 @@ import folium
 import gpxpy
 import json
 
-DEFAULT_CENTER = [25.0366, 121.4391]  # 民安路188巷5號
+DEFAULT_CENTER = [24.148720, 120.683280]  # 台中市北區三民路三段125號
 DEFAULT_ZOOM = 16
 FIXED_MARKER = {
-    "name": "民安門市",
-    "address": "新北市新莊區民安路188巷5號",
-    "lat": 25.0366,
-    "lng": 121.4391,
+    "name": "一中WG",
+    "address": "台中市北區三民路三段125號",
+    "lat": 24.148720,
+    "lng": 120.683280,
     "emoji": "📍"
 }
 
@@ -30,7 +30,7 @@ def generate_map_for_folder(gpx_folder):
                 background-color: white; padding: 10px 14px; border-radius: 8px;
                 box-shadow: 0 2px 6px rgba(0,0,0,0.3); line-height: 1.6;">
         <div><a href="../index.html" style="text-decoration:none;font-weight:bold;color:#d43f3a;">🔙 返回首頁</a></div>
-        <div style="font-size:16px; font-weight:bold;">🦍🌍 WorldGym HZ 每日開發地圖</div>
+        <div style="font-size:16px; font-weight:bold;">🦍🌍 WorldGym TE 每日開發地圖</div>
         <div style="font-size:14px;">📅 月份：<b>{gpx_folder} 💰</b></div>
     </div>
     '''
@@ -64,7 +64,7 @@ def generate_map_for_folder(gpx_folder):
         except Exception as e:
             print(f"❌ 商家載入失敗: {e}")
 
-    # 🏠 固定地點標記：民安門市
+    # 🏠 固定地點標記：一中門市
     folium.Marker(
         location=[FIXED_MARKER["lat"], FIXED_MARKER["lng"]],
         popup=f"{FIXED_MARKER['emoji']} {FIXED_MARKER['name']}<br>{FIXED_MARKER['address']}",
