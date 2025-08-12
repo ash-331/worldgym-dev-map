@@ -105,3 +105,4 @@ def generate_map_for_folder(gpx_folder):
 
 for folder in folders:
     generate_map_for_folder(folder)
+    # 測試觸發 workflow
